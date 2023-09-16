@@ -1,8 +1,8 @@
 {% if cookiecutter.manylinux_image -%}
 FROM quay.io/pypa/{{ cookiecutter.manylinux_image }}
 {%- else %}
-# Ubuntu:18.04 based AppImages are for legacy projects
-FROM ubuntu:18.04
+# In original repo, Ubuntu:18.04 is used for legacy projects. Let's try 20.04:
+FROM ubuntu:20.04
 {%- endif %}
 
 # Set the working directory
